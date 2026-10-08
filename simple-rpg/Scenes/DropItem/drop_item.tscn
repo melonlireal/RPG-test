@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bvdq47paxqwuq"]
+
+[ext_resource type="Script" uid="uid://dqtieqqddiw71" path="res://Scenes/DropItem/drop_item.gd" id="1_dw5wl"]
+[ext_resource type="Texture2D" uid="uid://vn73fo5dchjs" path="res://icon.svg" id="1_nui1t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dw5wl"]
+radius = 8.0
+
+[node name="DropItem" type="Area2D" unique_id=255542216]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_dw5wl")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=139322541]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_nui1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1971139276]
+shape = SubResource("CircleShape2D_dw5wl")
+
+[node name="ItemName" type="Label" parent="." unique_id=1333190284]
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 4.0
+offset_bottom = -7.0
+theme_override_font_sizes/font_size = 4
+text = "aaa"
+horizontal_alignment = 1
+vertical_alignment = 1

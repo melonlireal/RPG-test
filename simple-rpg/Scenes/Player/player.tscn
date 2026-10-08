@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dtm2smhwvnfaf"]
+
+[ext_resource type="Script" uid="uid://c3nsy0i68jwxu" path="res://Scripts/Player/player.gd" id="1_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://vn73fo5dchjs" path="res://icon.svg" id="1_uvnfx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvnfx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pick"]
+radius = 12.0
+
+[node name="Player" type="CharacterBody2D" unique_id=464956775]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_a3d8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1550998850]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_uvnfx")
+
+[node name="HitBox" type="Node2D" parent="." unique_id=255883008]
+
+[node name="left" type="Area2D" parent="HitBox" unique_id=362659679]
+position = Vector2(-25, 0)
+collision_layer = 4
+collision_mask = 128
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox/left" unique_id=1674128543]
+shape = SubResource("CircleShape2D_uvnfx")
+
+[node name="right" type="Area2D" parent="HitBox" unique_id=547133944]
+position = Vector2(25, 0)
+collision_layer = 4
+collision_mask = 128
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox/right" unique_id=1256804348]
+shape = SubResource("CircleShape2D_uvnfx")
+
+[node name="up" type="Area2D" parent="HitBox" unique_id=1261792769]
+position = Vector2(0, -25)
+collision_layer = 4
+collision_mask = 128
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox/up" unique_id=1599474496]
+shape = SubResource("CircleShape2D_uvnfx")
+
+[node name="down" type="Area2D" parent="HitBox" unique_id=1067279294]
+position = Vector2(0, 25)
+collision_layer = 4
+collision_mask = 128
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox/down" unique_id=1614299822]
+shape = SubResource("CircleShape2D_uvnfx")
+
+[node name="PickBox" type="Area2D" parent="." unique_id=9513624810]
+collision_layer = 16
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickBox" unique_id=4820193657]
+shape = SubResource("CircleShape2D_pick")
